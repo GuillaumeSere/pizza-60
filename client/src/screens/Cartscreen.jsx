@@ -7,13 +7,14 @@ const Cartscreen = () => {
 
     const cartstate = useSelector(state => state.cartReducer)
     const cartItems = cartstate.cartItems
+    let subtotal = cartItems.reduce((x, item) => x + item.price , 0)
     const dispatch = useDispatch()
 
     return (
         <div className='bg-content'>
             <div className='row justify-content-center title-cart'>
                 <div className="col-md-6">
-                    <h2 style={{ fontSize: "40px" }}>Votre commande</h2>
+                    <h2 style={{ fontSize: "40px", marginBottom: "2rem" }}>Votre commande</h2>
 
                     {cartItems.map((item, index) => {
                         return <div className="flex-container" key={index}>
@@ -41,8 +42,9 @@ const Cartscreen = () => {
 
                 </div>
 
-                <div className=''>
-
+                <div className='col-md-4' style={{marginBottom: "22rem"}}>
+                    <h2 style={{fontSize: '40px'}}>Total : {subtotal} €</h2>
+                    <button className='btn'>VALIDER</button>
                 </div>
             </div>
         </div>
