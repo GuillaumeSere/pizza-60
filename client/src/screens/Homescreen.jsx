@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPizzas } from '../actions/pizzaActions';
+import Error from '../components/Error';
+import Loading from '../components/Loading';
 import Pizza from '../components/Pizza';
 
 const Homescreen = () => {
@@ -19,9 +21,9 @@ const Homescreen = () => {
         <div className='content'>
             <div className="row">
                 {loading ? (
-                    <h1>Loading...</h1>
+                   <Loading />
                 ) : error ? (
-                    <h1>Something went wrong</h1>
+                    <Error error='Il y a une erreur' />
                 ) : (
                     pizzas.map((pizza) => {
                         return <div className="col-md-4 p-3" key={pizza._id}>

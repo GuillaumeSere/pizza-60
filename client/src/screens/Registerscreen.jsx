@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { registerUser } from '../actions/userActions';
+import Error from '../components/Error';
+import Loading from '../components/Loading';
+import Success from '../components/Success';
 
 const Registerscreen = () => {
 
@@ -8,11 +11,13 @@ const Registerscreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [cpassword, setCpassword] = useState('');
+    const registerstate = useSelector(state => state.registerUserReducer)
+    const {error, loading, success} = registerstate
 
     const dispatch = useDispatch();
 
     const register = () => {
-        if (password != cpassword){
+        if (password !== cpassword){
             alert("les mots de passe ne sont pas identiques")
         }else{
             const user = {
@@ -29,6 +34,9 @@ const Registerscreen = () => {
         <div className='bg-content'>
             <div className="row title-register">
                 <div className="col-md-5">
+                    {loading && (<Loading />)}
+                    {success && (<Success success='Utilisateur enregistré' />)}
+                    {error && (<Error error='Email invalide' />)}
                     <h2>INSCRIPTION</h2>
                     <div>
                         <input
@@ -64,6 +72,7 @@ const Registerscreen = () => {
                             required
                         />
                         <button className='btn mt-5' onClick={register}>VALIDER</button>
+                        <a href="/login" style={{display: 'flex', marginTop: '1rem', color: 'black', justifyContent: 'center'}}>Cliquez ici pour vous identifier</a>
                     </div>
 
                 </div>

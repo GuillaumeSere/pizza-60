@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../actions/cartActions';
 import { deleteFromCart } from '../actions/cartActions';
+import Checkout from '../components/Checkout';
 
 const Cartscreen = () => {
 
@@ -42,9 +43,9 @@ const Cartscreen = () => {
 
                 </div>
 
-                <div className='col-md-4' style={{marginBottom: "22rem"}}>
+                <div className='col-md-4' >
                     <h2 style={{fontSize: '40px'}}>Total : {subtotal} €</h2>
-                    <button className='btn'>VALIDER</button>
+                    <Checkout subtotal={subtotal} />
                 </div>
             </div>
         </div>

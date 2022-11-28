@@ -207,6 +207,14 @@ b{
         width: 80%;
     }
 
+    .title-cart{
+        display: flex !important;
+        padding: 1rem;
+        border-radius: .5rem;
+        background: #ffffff82 !important;
+        width: 90%;
+    }
+
  }
 
  @media (max-width: 560px){
