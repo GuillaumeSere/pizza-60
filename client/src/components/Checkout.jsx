@@ -1,10 +1,15 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import { placeOrder } from '../actions/orderActions';
+import Error from '../components/Error';
+import Loading from '../components/Loading';
+import Success from '../components/Success';
 
 const Checkout = ({ subtotal }) => {
 
+    const orderstate = useSelector((state) => state.placeOrderReducer)
+    const {loading, error, success} = orderstate
     const dispatch = useDispatch();
 
     const tokenHander = (token) => {
@@ -14,12 +19,16 @@ const Checkout = ({ subtotal }) => {
 
     return (
         <div>
+            {loading && (<Loading />)}
+            {error && (<Error error="Votre commande comporte une erreur" />)}
+            {success && (<Success success="Votre commande est en préparation" />)}
+
             <StripeCheckout
                 amount={subtotal * 100}
                 shippingAddress
                 token={tokenHander}
                 currency='EUR'
-                stripeKey= "pk_test_51M96V0Ftxyuiedyvt5zg8mOrPGtQLrdtLuKaYC4bupyNYvuZwDGGQnVulYyL8ddxoTdplHKeUfQVdYOkrVsq2yAT00r0u7ouln"
+                stripeKey= {process.env.REACT_APP_PUBLISHABLE}
             >
                 <button className='btn'>Payer</button>
             </StripeCheckout>

@@ -15,3 +15,17 @@ export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
         console.log(error)
     }
 }
+
+export const getUserOrders = () => async (dispatch, getstate) => {
+    
+    const currentUser = getstate().loginUserReducer.currentUser
+    dispatch({type: 'GET_USER_ORDERS_REQUEST'})
+
+    try{
+        const response = await axios.post('/api/orders/getuserorders', {userid: currentUser._id})
+        console.log(response)
+        dispatch({type: 'GET_USER_ORDERS_SUCCESS', payload : response.data})
+    } catch (error) {
+        dispatch({type: 'GET_USER_ORDERS_FAILED', payload : error})
+    }
+}

@@ -48,7 +48,7 @@ const Registerscreen = () => {
                             required
                         />
                         <input
-                            type="text"
+                            type="email"
                             placeholder='email'
                             className='form-control'
                             value={email}
@@ -56,7 +56,7 @@ const Registerscreen = () => {
                             required
                         />
                         <input
-                            type="text"
+                            type="password"
                             placeholder='mot de passe'
                             className='form-control'
                             value={password}
@@ -64,7 +64,7 @@ const Registerscreen = () => {
                             required
                         />
                         <input
-                            type="text"
+                            type="password"
                             placeholder='confirme mot de passe'
                             className='form-control'
                             value={cpassword}

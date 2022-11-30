@@ -121,6 +121,21 @@ mark{
     width: 50%;
 }
 
+.title-order{
+    display: flex !important;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #ffffff82 !important;
+    width: 80%;
+    gap: 1.5rem;
+}
+
+.order{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between;
+}
+
 input{
     margin-top: 1rem !important;
 }
@@ -213,6 +228,12 @@ b{
         border-radius: .5rem;
         background: #ffffff82 !important;
         width: 90%;
+    }
+
+    .title-order{
+        margin-top: 5rem !important;
+        width: 90% !important;
+        height: 100vh;
     }
 
  }

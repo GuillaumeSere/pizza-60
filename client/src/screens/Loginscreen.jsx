@@ -32,7 +32,7 @@ const Loginscreen = () => {
                     {error && (<Error error='mot de passe ou email invalide' />)}
                     <div>
                         <input
-                            type="text"
+                            type="email"
                             placeholder='email'
                             className='form-control'
                             value={email}
@@ -40,7 +40,7 @@ const Loginscreen = () => {
                             required
                         />
                         <input
-                            type="text"
+                            type="password"
                             placeholder='mot de passe'
                             className='form-control'
                             value={password}
