@@ -12,3 +12,11 @@
 
 ![20221130093048](https://user-images.githubusercontent.com/75996200/204746392-7c026ec6-f658-494e-8b4c-94fdbb21440a.png)
 
+
+
+![20221130093507](https://user-images.githubusercontent.com/75996200/204747166-00ca0f46-756c-4a54-afad-5caab3c429bc.png)
+
+![20221130093517](https://user-images.githubusercontent.com/75996200/204747183-6ec3c2be-59cb-4feb-87ee-8c554258de9c.png)
+
+![20221130093527](https://user-images.githubusercontent.com/75996200/204747194-1fd25110-78d3-4201-b9c4-34428de8a1d9.png)
+
