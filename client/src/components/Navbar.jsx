@@ -23,12 +23,12 @@ const Navbar = () => {
                             {currentUser ?
                                 (
                                     <div className="dropdown">
-                                        <a className="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="dropdown-toggle nav-link" href="#" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {currentUser.name}
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a className="dropdown-item" href="/orders">Commandes</a>
-                                            <a className="dropdown-item" href="#" onClick={() => {dispatch(logoutUser())}}><li>Déconnexion</li></a>
+                                            <a className="dropdown-item" href="/" onClick={() => {dispatch(logoutUser())}}><li>Déconnexion</li></a>
                                         </div>
                                     </div>
                                 ) : (
