@@ -5,7 +5,7 @@ export const getAllPizzas = () => async dispatch => {
     dispatch({type: 'GET_PIZZAS_REQUEST'})
 
     try{
-        const response = await axios.get('/api/pizzas/getallpizzas')
+        const response = await axios.get('https://pizza-60.vercel.app/api/pizzas/getallpizzas')
         console.log(response)
         dispatch({type: 'GET_PIZZAS_SUCCESS', payload : response.data})
     } catch (error) {

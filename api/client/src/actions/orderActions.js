@@ -7,7 +7,7 @@ export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
     const cartItems = getState().cartReducer.cartItems
 
     try {
-        const response = await axios.post('/api/orders/placeorder', {token, subtotal, currentUser, cartItems})
+        const response = await axios.post('https://pizza-60.vercel.app/api/orders/placeorder', {token, subtotal, currentUser, cartItems})
         dispatch({type: 'PLACE_ORDER_SUCCESS'})
         console.log(response)
     } catch (error) {
@@ -22,7 +22,7 @@ export const getUserOrders = () => async (dispatch, getstate) => {
     dispatch({type: 'GET_USER_ORDERS_REQUEST'})
 
     try{
-        const response = await axios.post('/api/orders/getuserorders', {userid: currentUser._id})
+        const response = await axios.post('https://pizza-60.vercel.app/api/orders/getuserorders', {userid: currentUser._id})
         console.log(response)
         dispatch({type: 'GET_USER_ORDERS_SUCCESS', payload : response.data})
     } catch (error) {
