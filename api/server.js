@@ -13,9 +13,9 @@ const ordersRoute = require("./routes/ordersRoute");
 
 app.use(express.static(path.join(__dirname + "public")))
 
-app.use('/api/pizzas/', pizzasRoute);
-app.use('/api/users/', userRoute);
-app.use('/api/orders/', ordersRoute);
+app.use('https://pizza-60.vercel.app/api/pizzas/', pizzasRoute);
+app.use('https://pizza-60.vercel.app/api/users/', userRoute);
+app.use('https://pizza-60.vercel.app/api/orders/', ordersRoute);
 
 app.get("/", (req, res) => {
     res.send("Server working 🔥" + port);
